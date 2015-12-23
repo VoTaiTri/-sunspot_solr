@@ -12,3 +12,10 @@
 ### QA
 - [Sunspot Mailing List](http://groups.google.com/group/ruby-sunspot)
 - [Stack Overflow](http://www.stackoverflow.com)
+
+### Command
+- Start solr :
+`rake sunspot:solr:start`
+
+- Reindex :
+`rake sunspot:reindex`
