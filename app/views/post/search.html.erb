@@ -1,0 +1,17 @@
+<%= form_for search_path, method: :get do |f| %>
+  <p>
+    <%= f.label "Search for" %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
+
+<%= link_to "Search", search_path %>
+
+<% @search.each_hit_with_result do |hit, post| %>
+  <h2><%= h post.id %> || <%= h post.title %></h2>
+  <% if hit.score.present? %>
+    <h4>(<%= h hit.score %>)</h4>
+  <% end %>
+  <p><%= h truncate(post.body, length: 100) %></p>
+<% end %>
